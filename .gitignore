@@ -1,0 +1,20 @@
+# Java
+*.class
+
+# IntelliJ
+.idea/
+
+# VSCode
+.vscode/
+
+# Maven
+target/
+
+# Gradle
+build/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
