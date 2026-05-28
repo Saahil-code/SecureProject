@@ -1,0 +1,72 @@
+<project>
+
+  <!-- MODEL version -->
+  <modelVersion>4.0.0</modelVersion>
+
+<!-- Project information  -->
+  <groupId>com.saahil</groupId>
+  <artifactId>auth-project</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+<!-- Project properties  -->
+  <properties>
+    <java.version>21</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- SQL DB driver -->
+  <dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>9.3.0</version>
+    </dependency>
+
+    <!-- TEST dependency -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.2</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+
+
+
+
+<!-- BUILD -->
+  <build>
+    <plugins>
+      <plugin>
+<!-- java compiler  plugin -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+
+      </plugin>
+<!-- Excutable jar plugin -->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.1</version>
+<configuration>
+<archive>
+<manifest>
+<mainClass>com.saahil.Main</mainClass>
+</manifest>
+</archive>
+</configuration>
+    </plugin>
+    </plugins>
+  </build>
+
+</project> 
