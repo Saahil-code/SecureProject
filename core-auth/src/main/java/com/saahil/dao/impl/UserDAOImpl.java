@@ -32,4 +32,7 @@ String readUserName = "SELECT Name FROM users WHERE Email = ?";
 String readAll = "SELECT * FROM users";
 // String update = "";
 // String delete = "";
+public void createUser(User){
+    
+  }
 } 
