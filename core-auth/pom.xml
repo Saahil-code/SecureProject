@@ -53,6 +53,7 @@
         </configuration>
 
       </plugin>
+
 <!-- Excutable jar plugin -->
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -66,6 +67,16 @@
 </archive>
 </configuration>
     </plugin>
+
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>3.6.3</version>
+    <configuration>
+        <mainClass>com.saahil.Main</mainClass>
+    </configuration>
+</plugin>
+
     </plugins>
   </build>
 

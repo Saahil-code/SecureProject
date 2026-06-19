@@ -5,8 +5,12 @@ import java.sql.SQLException;
 import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
 
 public class Database{
-private static final String URL = "jdbc:mysql://localhost:3306/authdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-  private static final String USERNAME = "saahilsharma";
+// private static final String URL = "jdbc:mysql://localhost:3306/authdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+
+ private static final String URL = "jdbc:mysql://localhost:3306/authdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+
+  // private static final String USERNAME = "saahilsharma";
+  private static final String USERNAME = "root";
   private static final String PASSWORD = "BangBang@123A";
   static Connection conn = null;
  
