@@ -1,6 +1,5 @@
 package com.saahil.service;
 import com.saahil.model.User;
-import java.sql.SQLException;
 
 public interface AuthService{
     boolean register(User user);

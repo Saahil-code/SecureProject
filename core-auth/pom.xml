@@ -23,6 +23,12 @@
     <artifactId>mysql-connector-j</artifactId>
     <version>9.3.0</version>
     </dependency>
+<!-- Environment variabls -->
+<dependency>
+    <groupId>io.github.cdimascio</groupId>
+    <artifactId>java-dotenv</artifactId>
+    <version>5.2.2</version>
+</dependency>
 
     <!-- TEST dependency -->
     <dependency>
