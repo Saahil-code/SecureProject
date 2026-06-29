@@ -1,23 +1,24 @@
 package com.saahil.dao.impl;
 import com.saahil.database.Database;
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
-import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
-import com.saahil.model.User;
-import java.sql.SQLException;
 import com.saahil.dao.UserDAO;
 
 public class UserDAOImpl implements UserDAO{
 
   // QUERIES
-String sql = "CREATE TABLE IF NOT EXISTS users(" + 
-"Id int AUTO_INCREMENT PRIMARY KEY," + 
-"Name VARCHAR(255) NOT NULL," + 
-"Username VARCHAR(255) NOT NULL," + 
-"Password VARCHAR(255) NOT NULL," + 
-"Email VARCHAR(255) UNIQUE NOT NULL" + ")"; //done 
+String sql =
+    "CREATE TABLE IF NOT EXISTS users (" +
+    "id INT AUTO_INCREMENT PRIMARY KEY, " +
+    "name VARCHAR(255) NOT NULL, " +
+    "username VARCHAR(50) NOT NULL UNIQUE, " +
+    "password_hash VARCHAR(255) NOT NULL, " +
+    "email VARCHAR(255) NOT NULL UNIQUE, " +
+    "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
+    "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" +
+    ")";
 
 String create = "INSERT INTO users(Name,Username,Password,Email)VALUES(?,?,?,?);"; 
 String EmailCheck = "SELECT EXISTS(" + "SELECT 1 FROM users WHERE email = ?" + ")";
@@ -111,7 +112,7 @@ public boolean updateEmail(String Email,String Username){
   return false;
 }
 
-@Override
+// @Override
 public boolean emailCheck(String Email){
   try(Connection conn = Database.getConnected();
 PreparedStatement ps = conn.prepareStatement(EmailCheck)){

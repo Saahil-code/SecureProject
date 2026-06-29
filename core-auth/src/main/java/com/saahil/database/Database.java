@@ -3,22 +3,27 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class Database{
-// private static final String URL = "jdbc:mysql://localhost:3306/authdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
- private static final String URL = "jdbc:mysql://localhost:3306/authdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+  static Dotenv dotenv = Dotenv.load();
 
-  // private static final String USERNAME = "saahilsharma";
-  private static final String USERNAME = "root";
-  private static final String PASSWORD = "BangBang@123A";
-  static Connection conn = null;
+private static final String URL = dotenv.get("DB_URL");
+private static final String USERNAME = dotenv.get("DB_USERNAME");
+private static final String PASSWORD = dotenv.get("DB_PASSWORD");
+static Connection conn = null;
  
 
 
 // CONNECTION ESHTABLISHMENT
 
 public static Connection getConnected() throws SQLException{
+    if (URL == null || USERNAME == null || PASSWORD == null) {
+    throw new RuntimeException(
+        "Database environment variables are missing."
+    );
+}
   return DriverManager.getConnection(URL,USERNAME,PASSWORD);
 }
 

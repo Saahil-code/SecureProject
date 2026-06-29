@@ -1,10 +1,5 @@
 package com.saahil.service;
 import com.saahil.model.User;
-import java.sql.SQLException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import com.saahil.database.Database;
-import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
 import com.saahil.dao.impl.UserDAOImpl;
 import com.saahil.dao.UserDAO;
 
