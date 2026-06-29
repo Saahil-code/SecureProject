@@ -22,7 +22,7 @@ private static final String URL = dotenv.get("DB_URL");
 private static final String USERNAME = dotenv.get("DB_USERNAME");
 private static final String PASSWORD = dotenv.get("DB_PASSWORD");
 static Connection conn = null;
- 
+// "printy hello";
 
 
 // CONNECTION ESHTABLISHMENT
