@@ -1,0 +1,37 @@
+# Maven
+target/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+logs/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Spring Boot Secrets
+application-local.yml
+application-local.properties
+application-prod.yml
+application-prod.properties
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+Session.vim
+
+# Temporary Files
+tmp/
+.cache/
